@@ -19,7 +19,7 @@
         }
     }
     
-    return( packArr );
+//     return( packArr );
     var l = 0;
     for (var m = 0; m < 4;m++){
         for(var k = 0; k < (packArr.length)/4; k++){
@@ -27,7 +27,7 @@
             l++;
         }
     }
-    return( packObj );
+//     return( packObj );
 
 
     if(!asArray){
