@@ -1,0 +1,46 @@
+// first trail
+const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+    const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+    const packArr = []
+    const packObj = {}
+       var lengthOfSuits = suits.length;
+       var lengthOfValues = values.length;
+    
+
+    // write your code here
+    for (var i = 0; i < lengthOfSuits; i++){
+        for (var j = 0; j < lengthOfValues; j++){
+            packArr.push( values[j]+" of "+ suits[i] );
+
+        }
+    }
+    
+    console.log(packArr);
+    var l = 0;
+    for (var m = 0; m < 4;m++){
+        for(var k = 0; k < (packArr.length)/4; k++){
+            packObj[packArr[l]] = k + 1;
+            l++;
+        }
+    }
+    console.log( packObj );
+// 2nd trail
+const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+    const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+    const packArr = []
+    const packObj = {}
+    var lengthOfSuits = suits.length;
+    var lengthOfValues = values.length;
+    var l = 0;
+
+    // write your code here
+    for (var i = 0; i < lengthOfSuits; i++){
+        for (var j = 0; j < lengthOfValues; j++){
+            packArr.push( values[j]+" of "+ suits[i] );
+            packObj[packArr[l]] = j+1;
+
+        }
+    }
+    
+    console.log( packArr );
+    console.log( packObj );
