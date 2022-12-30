@@ -8,6 +8,8 @@
     const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
     const packArr = []
     const packObj = {}
+    var lengthOfSuits = suits.length;
+    var lengthOfValues = values.length;
 
     // write your code here
     for (var i = 0; i < lengthOfSuits; i++){
