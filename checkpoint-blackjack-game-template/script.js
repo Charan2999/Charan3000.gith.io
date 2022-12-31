@@ -311,4 +311,3 @@ function hit() {
  * Initial Deal
  */
 initialDeal();
-
