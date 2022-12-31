@@ -37,6 +37,46 @@
 }
 
 /**
+ * Function which build pack of Cards as an Array and as an Object
+ * @param {*} asArray - which decides whether to return as an Array or as an Object
+ * @returns - packArr if asArray is true, else packObj
+ */
+ function buildCards(asArray=true){
+    const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
+    const values = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'];
+    const packArr = []
+    const packObj = {}
+    var lengthOfSuits = suits.length;
+    var lengthOfValues = values.length;
+
+    // write your code here
+    for (var i = 0; i < lengthOfSuits; i++){
+        for (var j = 0; j < lengthOfValues; j++){
+            packArr.push( values[j]+" of "+ suits[i] );
+
+        }
+    }
+    
+//     return( packArr );
+    var l = 0;
+    for (var m = 0; m < 4;m++){
+        for(var k = 0; k < (packArr.length)/4; k++){
+            packObj[packArr[l]] = k + 1;
+            l++;
+        }
+    }
+//     return( packObj );
+
+
+    if(!asArray){
+        return packObj;
+    }
+    return packArr;
+}
+
+
+
+/**
  * Define Deck class
  */
 class Deck {
@@ -52,6 +92,8 @@ class Deck {
      * Hint: use buildCards in this method
      */
     reset() {
+        this.deck = [];
+        this.deck = buildCards(true);
         // write your code here
 
     } //End of reset()
@@ -61,6 +103,12 @@ class Deck {
      * Shuffling the cards
      */
     shuffle() {
+            for (var asArray = this.deck.length, a = 0; a < asArray; a++) {
+            var suits = Math.floor(Math.random() * asArray),
+              values = this.deck[a];
+            this.deck[a] = this.deck[suits];
+            this.deck[suits] = values;
+          }
         // write your code here
         
     } //End of shuffle()
@@ -71,17 +119,24 @@ class Deck {
      */
     deal() {
         // write your code here
-
+        return this.deck.pop();
     } //End of deal()
 
     /**
      * Check if the Deck is empty
      * @returns {Boolean} True or False 
      */
+
     isEmpty() {
         // write your code here
-
+        if(0 == this.deck.length){
+            return true
+        }
+        else{
+            return false;
+        }
     } //End of isEmpty()
+    
 
     /**
      * Remaining cards in the Deck
@@ -89,7 +144,7 @@ class Deck {
      */
     length() {
         // write your code here
-
+        return this.deck.length;
     } //End of length()
 
 } //End of Deck Class
@@ -256,3 +311,4 @@ function hit() {
  * Initial Deal
  */
 initialDeal();
+
