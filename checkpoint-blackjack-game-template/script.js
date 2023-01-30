@@ -88,7 +88,7 @@ class Deck {
 
     isEmpty() {
         // write your code here
-        if(0 == this.deck.length){
+        if(this.deck.length == 0){
             return true
         }
         else{
